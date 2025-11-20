@@ -1,9 +1,5 @@
-DROP TABLE resources_skills;
-
-DROP TABLE resources;
-
-DROP TABLE skills;
-
-DROP TABLE themes;
-
-DROP TYPE resource_type;
+DROP TABLE IF EXISTS resources_skills;
+DROP TABLE IF EXISTS resources;
+DROP TABLE IF EXISTS skills;
+DROP TABLE IF EXISTS themes;
+DROP TYPE IF EXISTS resource_type;

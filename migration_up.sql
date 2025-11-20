@@ -21,12 +21,12 @@ CREATE TABLE resources (
     url TEXT NOT NULL,
     is_ada BOOLEAN,
     theme_id INTEGER REFERENCES themes(id),
-    created_at TIMESTAMPTZ,
-    updated_at TIMESTAMPTZ
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
 CREATE TABLE resources_skills (
-    resource_id INTEGER REFERENCES resources(id),
-    skill_id INTEGER REFERENCES skills(id),
+    resource_id INTEGER REFERENCES resources(id) ON DELETE CASCADE,
+    skill_id INTEGER REFERENCES skills(id) ON DELETE CASCADE,
     PRIMARY KEY (resource_id, skill_id)
 );
